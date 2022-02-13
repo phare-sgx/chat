@@ -10,9 +10,8 @@ def hello_world():
  
 @app.route('/register', methods=['POST'])
 def register():
-    print(request.headers)
-    print(request.stream.read())
-    return 'welcome'
+    result = request.json['a'] + request.json['b']
+    return str(result)
  
  
 if __name__ == '__main__':
